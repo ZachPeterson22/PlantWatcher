@@ -1,0 +1,19 @@
+.plants {
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant-info {
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 200px;
+    width: 350px;
+    margin: 15px;
+    padding: 5px;
+}
