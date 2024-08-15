@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Plants from './Plants.js';
 
 function App() {
 
@@ -7,15 +8,9 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [plants, setPlants] = useState();
+  // const [currentPage, setCurrentPage] = useState();
 
   useEffect(() => {
-    // fetch(apiUrl)
-    // .then(response => response.json())
-    // .then(data => {
-    //   setPlants(data); 
-    //   console.log('data', data)
-    // })
-    // .catch(error => console.error(error))
 
     async function getPlants() {
       try {
@@ -35,19 +30,11 @@ function App() {
   return (
     <div className="App">
       <div className='title'>Plant Watcher</div>
-      <div className='plants'>
-        {isLoading ? <div>Loading Plants</div> : plants.data.map((plant, i) => (
-          <div key={i} className='plant-info'>
-            <div className='info-item'>Common Name: {plant.common_name}</div>
-            <div className='info-item'>Other Name: {plant.other_name.map((name, i) => <div key={i}>{name}</div>)}</div>
-            <div className='info-item'>Scientific Name: {plant.scientific_name[0]}</div>
-            <div className='info-item'>Cycle Type: {plant.cycle}</div>
-            <div className='info-item'>Watering Frequency: {plant.watering}</div>
-            <div className='info-item'>Lighting: {plant.sunlight.map((light, i) => <div key={i}>{light}</div>)}</div>
-          </div>
-        ))}
-        {/* {isLoading ? <div>a</div> : <div>{plants.data[0].common_name}</div> } */}
-      </div>
+      {isLoading ? <div>Loading Plants...</div> : <Plants plants={plants}></Plants>}
+      {/* <div className='pagination'>
+        <button className='page-btn'>previous page</button>
+        <button className='page-btn'>next page</button>
+      </div> */}
     </div>
   );
 }
