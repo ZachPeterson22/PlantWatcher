@@ -18,6 +18,9 @@
     padding: 5px;
 }
 
+/* fix child elements getting hovered instead of parent
+i want to highlight the plant you want to click on */
+
 .plant-img {
     display: flex;
     flex-direction: row;
@@ -25,11 +28,21 @@
     width: inherit;
 }
 
+.plant-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 5px;
+}
+
 .info-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    width: 100%;
+    text-align: center;
+}
+
+.more-info-btn {
+    width: 100%;
+    text-align: center;
 }
 
 .pagination {

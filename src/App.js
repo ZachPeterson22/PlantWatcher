@@ -28,14 +28,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <>
       <div className='title'>Plant Watcher</div>
       {isLoading ? <div>Loading Plants...</div> : <Plants plants={plants}></Plants>}
-      {/* <div className='pagination'>
-        <button className='page-btn'>previous page</button>
-        <button className='page-btn'>next page</button>
-      </div> */}
-    </div>
+      {/* put Plant.js here based on routing */}
+    </>
   );
 }
 
