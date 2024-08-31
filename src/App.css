@@ -1,3 +1,9 @@
+.title {
+    text-align: center;
+    font-size: 36px;
+    padding: 25px;
+}
+
 .plants {
     border: solid 1px black;
     display: flex;
@@ -6,13 +12,12 @@
     align-items: center;
 }
 
-.plant-info {
+.plant-thumbnail {
     border: solid 1px black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    /* height: 200px; */
     width: 350px;
     margin: 15px;
     padding: 5px;
@@ -21,23 +26,18 @@
 /* fix child elements getting hovered instead of parent
 i want to highlight the plant you want to click on */
 
-.plant-img {
+.plant-thumbnail-img {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: inherit;
 }
 
-.plant-title {
+.plant-thumbnail-title {
     width: 100%;
     text-align: center;
     font-size: 24px;
     padding-bottom: 5px;
-}
-
-.info-item {
-    width: 100%;
-    text-align: center;
 }
 
 .more-info-btn {

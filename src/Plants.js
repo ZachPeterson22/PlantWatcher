@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 function Plants(props) {
-  // route this with an onclick on the list of plants and use the same props the Plants is using
-
   return (
     <>
       <div className='plants'>
         {props.plants.data.map((plant, i) => (
-          <div key={i} className='plant-info'>
-            <div className='plant-title'> {plant.common_name}</div>
+          <div key={i} className='plant-thumbnail'>
+            <div className='plant-thumbnail-title'> {plant.common_name}</div>
             {plant.default_image ? 
-            <div className='plant-img'>
+            <div className='plant-thumbnail-img'>
               <img src={plant.default_image.thumbnail} alt='plant-img'/>
-            </div > : <div className='plant-img'>No Image Provided</div>}
-            <div className='more-info-btn'>Click for more info...</div>
+            </div > : <div className='plant-thumbnail-img'>No Image Provided</div>}
+            <Link className='more-info-btn' to={`/plant/${plant.id}`}>Click for more info...</Link>
           </div>
         ))}
       </div>

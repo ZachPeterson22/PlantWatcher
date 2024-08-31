@@ -16,7 +16,7 @@ function App() {
       try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log('Plant Data', data);
+        // console.log('Plant Data', data);
         setPlants(data);
         setIsLoading(false);
       } catch (e) {
@@ -31,7 +31,6 @@ function App() {
     <>
       <div className='title'>Plant Watcher</div>
       {isLoading ? <div>Loading Plants...</div> : <Plants plants={plants}></Plants>}
-      {/* put Plant.js here based on routing */}
     </>
   );
 }
